@@ -1,2 +1,15 @@
 #!/usr/bin/env node
-require('../lib/cli');
+
+const path = require('path');
+
+// TODO: auto extract package name
+const packageName = '@noriaki/mocha-webpack';
+
+try {
+  const localMochaWebpack = require.resolve(path.join(process.cwd(), 'node_modules', packageName, 'bin', 'mocha-webpack'));
+  if (__filename !== localMochaWebpack) {
+    return require(localMochaWebpack);
+  } else {
+    return require('../lib/cli');
+  }
+} catch (e) { throw e; }
