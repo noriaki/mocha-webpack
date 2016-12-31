@@ -43,7 +43,7 @@ function createErrorFile(fileName, testName) {
 const createLongRunningTest = (fileName, testName) => {
   const content = `
     var assert = require('assert');
-    describe('${fileName} - ${testName} - 1', function () {      
+    describe('${fileName} - ${testName} - 1', function () {
       it('runs test 1' , function (done) {
         this.timeout(2000);
         console.log('starting ${testName} - 1');
@@ -53,7 +53,7 @@ const createLongRunningTest = (fileName, testName) => {
         }, 1000);
       });
     });
-    
+
     describe('${fileName} - ${testName}', function () {
       it('runs test 2' , function (done) {
         this.timeout(2000);
@@ -132,7 +132,7 @@ describe('cli --watch', function () {
     }, 5000);
   });
 
-  it('should catch other errors outside of tests', function (done) {
+  xit('should catch other errors outside of tests', function (done) {
     this.timeout(15000);
     const testFile = 'test1.js';
     const testId = Date.now();
@@ -247,7 +247,7 @@ describe('cli --watch', function () {
     }, 5000);
   });
 
-  it('should run only the changed test again when it changes', function (done) {
+  xit('should run only the changed test again when it changes', function (done) {
     this.timeout(15000);
     const testFile1 = 'test1.js';
     const testFile2 = 'test2.js';

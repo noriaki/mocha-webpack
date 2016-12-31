@@ -1,5 +1,5 @@
 {
-  "name": "mocha-webpack",
+  "name": "@noriaki/mocha-webpack",
   "version": "0.7.0",
   "description": "mocha cli with webpack support",
   "bin": {
